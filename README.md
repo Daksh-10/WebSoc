@@ -7,9 +7,12 @@ Consider the number Pi (3.14159265...) and exclude the first number 3
 🌕 1 node in the first level with ID:1
 🌕 4 nodes in the second level : IDs: [2,3,4,5]
 🌕 1 node in the third level, and so on
+
 ● In every node that belongs to the same layer, have an integer that represents the
 identifier for the node which increases linearly as the nodes are being added
+
 ● Final output should traverse the tree to retrieve the integers per node
+
 ● Dump each of the nodes (serialized) to the disk such that you can retrieve child nodes if
 a parent node is picked up. Serialization implies you don’t create human readable data,
 rather program readable data in the same data structure it’s initialized before dumping.
