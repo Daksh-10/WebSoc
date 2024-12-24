@@ -1,25 +1,29 @@
-# Arbitary Depth Tree Data Structure
-The above implementation is Rust code to build a tree of arbitrary depth where the number of branches per level equals the integer sequence in the expansion of the irrational number Pi.
+# Event push (Websockets) for data retrieval (REST API)
 
 **Problem Statement**
-Consider the number Pi (3.14159265...) and exclude the first number 3
-● The tree generation algorithm will have
-🌕 1 node in the first level with ID:1
-🌕 4 nodes in the second level : IDs: [2,3,4,5]
-🌕 1 node in the third level, and so on
 
-● In every node that belongs to the same layer, have an integer that represents the
-identifier for the node which increases linearly as the nodes are being added
+In building UI for high throughput systems, we need to use a mix of techniques without which
+the UI becomes very busy and a crash of the browser is likely. In this assignment, build a simple
+system where the websocket based UI will retrieve data from the backend that you have.
 
-● Final output should traverse the tree to retrieve the integers per node
+Set a counter on the backend which gets updated on the UI in real time connected via
+websockets. The backend pushes data to the UI say once every 2 seconds. This websocket
+payload is used by a REST API call in the UI to retrieve a random string (10 characters) which is generated along with the counter in the backend. So, it’s a bidirectional data flow where a
+push will lead to a pull. Every time the data comes in, it’s updated in the UI as shown below.
 
-● Dump each of the nodes (serialized) to the disk such that you can retrieve child nodes if
-a parent node is picked up. Serialization implies you don’t create human readable data,
-rather program readable data in the same data structure it’s initialized before dumping.
+Websocket is a push from the backend. REST API is a pull from the UI.
+
+Backend: Go
+Frontend: React, NextJS
 
 **Installation**
-1. '''git clone https://github.com/Daksh-10/RustedTree.git'''
-2. Change directory to RustedTree '''cd RustedTree'''
-3. To build the program '''cargo build'''
-4. To run the program '''cargo run'''
+**Backend :**
+1. Clone the repository
+2. Change Directory to backend ```cd backend```
+3. Install the dependencies ```go mod tidy```
+4. Run the program ```go run main.go```
 
+**Frontend :**
+1. Change Directory to frontend ```cd frontend```
+2. Install the dependencies ```npm i```
+3. Run the program ```npm run dev```
